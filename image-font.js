@@ -47,8 +47,8 @@
   function getDefaultPunctuationBasePath() {
     var path = window.location.pathname.toLowerCase();
     return path.indexOf("/pages/") !== -1
-      ? "../Images/Site Assets/Punctuation Marks/"
-      : "Images/Site Assets/Punctuation Marks/";
+      ? "../Punctuation Marks/"
+      : "Punctuation Marks/";
   }
 
   function createLetterNode(character, letterBasePath, punctuationBasePath, state, options) {
