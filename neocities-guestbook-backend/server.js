@@ -107,15 +107,51 @@ app.get('/messages', async (req, res) => {
   }
 });
 
-// Delete message (optional endpoint)
+// Delete message (requires email match or admin password)
 app.delete('/messages/:id', async (req, res) => {
   try {
     const messageId = parseInt(req.params.id);
+    const { email } = req.body;
+
+    if (!email) {
+      return res.status(400).json({ 
+        success: false, 
+        error: 'Email or admin password required' 
+      });
+    }
+
+    const adminPassword = process.env.ADMIN_PASSWORD;
+    const isAdmin = adminPassword && email === adminPassword;
+
     let messages = await loadMessages();
+    const messageToDelete = messages.find(msg => msg.id === messageId);
+
+    if (!messageToDelete) {
+      return res.status(404).json({ 
+        success: false, 
+        error: 'Message not found' 
+      });
+    }
+
+    // Check if user is admin or message owner
+    const isOwner = email === messageToDelete.email;
+    
+    if (!isOwner && !isAdmin) {
+      return res.status(403).json({ 
+        success: false, 
+        error: 'Unauthorized: Email does not match message owner' 
+      });
+    }
+
+    // Delete the message
     messages = messages.filter(msg => msg.id !== messageId);
     await saveMessages(messages);
-    res.json({ success: true });
+
+    console.log(`Message ${messageId} deleted by ${isAdmin ? 'admin' : 'owner'}`);
+
+    res.json({ success: true, message: 'Message deleted successfully' });
   } catch (error) {
+    console.error('Error deleting message:', error);
     res.status(500).json({ error: 'Error deleting message' });
   }
 });
