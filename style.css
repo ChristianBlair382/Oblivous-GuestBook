@@ -504,7 +504,7 @@ button {
 
 /* GUESTBOOK */
 .guestbook-page-background {
-  background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url("Images/Site Assets/Backgrounds/Website_Wallpaper_v3.png");
+  background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url("Website_Wallpaper_v3.png");
   background-repeat: repeat;
   background-size: 220px auto;
   background-position: bottom right;
@@ -518,7 +518,7 @@ button {
 
 .guestbook-container {
   border: 24px solid transparent;
-  border-image-source: url("Images/Site Assets/Containers and Buttons/Bulletin_Board_Container.png");
+  border-image-source: url("Bulletin_Board_Container.png");
   border-image-slice: 48 fill;
   border-image-width: 24px;
   border-image-outset: 0;
@@ -534,7 +534,7 @@ button {
 
 .guestbook-form {
   border: 24px solid transparent;
-  border-image-source: url("Images/Site Assets/Containers and Buttons/Parchment_Container.png");
+  border-image-source: url("Parchment_Container.png");
   border-image-slice: 48 fill;
   border-image-width: 24px;
   border-image-outset: 0;
@@ -633,7 +633,7 @@ button {
 
 .guestbook-messages {
   border: 24px solid transparent;
-  border-image-source: url("Images/Site Assets/Containers and Buttons/Parchment_Container.png");
+  border-image-source: url("Parchment_Container.png");
   border-image-slice: 48 fill;
   border-image-width: 24px;
   border-image-outset: 0;
@@ -677,7 +677,7 @@ button {
   position: absolute;
   inset: 0;
   border: 24px solid transparent;
-  border-image-source: url("../Images/Site Assets/Containers and Buttons/StickyNote_Container.png");
+  border-image-source: url("StickyNote_Container.png");
   border-image-slice: 56 fill;
   border-image-width: 24px;
   border-image-outset: 0;
