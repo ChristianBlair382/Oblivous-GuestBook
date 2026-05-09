@@ -1,0 +1,811 @@
+/* CSS is how you can add style to your website, such as colors, fonts, and positioning of your
+   HTML content. To learn how to do something, just try searching Google for questions like
+   "how to change link color." */
+
+body {
+  background-color: white;
+  color: black;
+  font-family: Verdana;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0 0 64px;
+  box-sizing: border-box;
+}
+
+.section-divider {
+  --divider-visible-height: 48px;
+  --divider-left-slice: 40;
+  --divider-right-slice: 40;
+  --divider-cap-width: 28px;
+  border-style: solid;
+  border-color: transparent;
+  border-width: 0 var(--divider-cap-width);
+  display: block;
+  height: var(--divider-visible-height);
+  width: auto;
+  max-width: 100%;
+  margin: 16px auto;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: transparent;
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Divider_Line.png");
+  border-image-slice: 0 var(--divider-right-slice) 0 var(--divider-left-slice) fill;
+  border-image-width: 0 var(--divider-cap-width) 0 var(--divider-cap-width);
+  border-image-outset: 0;
+  border-image-repeat: repeat stretch;
+  image-rendering: auto;
+}
+
+p {
+  text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  --header-font-scale: 1.5;
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: fit-content;
+  max-width: min(94vw, 1020px);
+  margin: 14px auto;
+  padding: 24px 16px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+h1::before,
+h2::before,
+h3::before,
+h4::before,
+h5::before,
+h6::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 24px solid transparent;
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Header_Container.png");
+  border-image-slice: 48 fill;
+  border-image-width: 32px;
+  border-image-outset: 0;
+  border-image-repeat: repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+
+h1::before {
+  filter: sepia(1) saturate(5) hue-rotate(0deg) brightness(1.03);
+}
+
+h2::before {
+  filter: sepia(1) saturate(5) hue-rotate(42deg) brightness(1.05);
+}
+
+h3::before {
+  filter: sepia(1) saturate(5) hue-rotate(88deg) brightness(1.05);
+}
+
+h4::before {
+  filter: sepia(1) saturate(5) hue-rotate(148deg) brightness(1.03);
+}
+
+h5::before {
+  filter: sepia(1) saturate(5) hue-rotate(210deg) brightness(1.02);
+}
+
+h6::before {
+  filter: sepia(1) saturate(5) hue-rotate(290deg) brightness(1.03);
+}
+
+/* Keep header image-font sizing in layout so the container fits correctly. */
+h1 [data-image-font],
+h2 [data-image-font],
+h3 [data-image-font],
+h4 [data-image-font],
+h5 [data-image-font],
+h6 [data-image-font] {
+  transform: none !important;
+  transform-origin: center;
+  gap: 0 !important;
+}
+
+h1 .image-font-letter,
+h2 .image-font-letter,
+h3 .image-font-letter,
+h4 .image-font-letter,
+h5 .image-font-letter,
+h6 .image-font-letter {
+  width: calc(28px * var(--header-font-scale));
+  height: calc(28px * var(--header-font-scale));
+}
+
+h1 .image-font-space,
+h2 .image-font-space,
+h3 .image-font-space,
+h4 .image-font-space,
+h5 .image-font-space,
+h6 .image-font-space {
+  width: calc(16px * var(--header-font-scale));
+}
+
+h1 .image-font-fallback,
+h2 .image-font-fallback,
+h3 .image-font-fallback,
+h4 .image-font-fallback,
+h5 .image-font-fallback,
+h6 .image-font-fallback {
+  font-size: calc(0.9em * var(--header-font-scale));
+}
+
+/*KEYFRAME ANIMATIONS*/
+@keyframes upright-diagonal-wallpaper-scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -220px -220px;
+  }
+}
+
+@keyframes downright-diagonal-wallpaper-scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 220px 220px;
+  }
+}
+
+@keyframes upleft-diagonal-wallpaper-scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -220px -220px;
+  }
+}
+
+@keyframes downleft-diagonal-wallpaper-scroll {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -220px -220px;
+  }
+}
+
+.index-page-background h1 {
+  --header-font-scale: 1.8;
+}
+
+.gallery-page-background h1 {
+  --header-font-scale: 2.8;
+}
+
+.gallery-page-background h2 {
+  --header-font-scale: 1.6;
+}
+
+.text-item {
+  border: 24px solid transparent;
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Text_Container.png");
+  border-image-slice: 32 fill;
+  border-image-width: 24px;
+  border-image-outset: 0;
+  border-image-repeat: repeat;
+  display: block;
+  width: fit-content;
+  max-width: min(92vw, 980px);
+  margin: 0 auto 12px;
+  padding: 6px 14px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.gallery-page-background {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url("Images/Site Assets/Backgrounds/Website_Wallpaper_v2.png");
+  background-repeat: repeat;
+  background-size: 220px auto;
+  background-position: bottom right;
+  animation: downright-diagonal-wallpaper-scroll 18s linear infinite;
+}
+
+.index-page-background {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url("Images/Site Assets/Backgrounds/Website_Wallpaper1.png");
+  background-repeat: repeat;
+  background-size: 220px auto;
+  background-position: top left;
+  animation: upleft-diagonal-wallpaper-scroll 18s linear infinite;
+}
+
+.gif-center {
+  width: 100%;
+  text-align: center;
+}
+
+.hyperlink-icons {
+  display: inline-flex;
+  /*
+  flex-direction: column;
+  align-items: center;
+  */
+  gap: 10px;
+  /*
+  padding: 0px 0;
+  */
+}
+
+.hyperlink-icons a,
+.hyperlink-icons img {
+  display: block;
+}
+
+.hyperlink-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 20px solid transparent;
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Button_Idle.png");
+  border-image-slice: 32 fill;
+  border-image-width: 24px;
+  border-image-outset: 0;
+  border-image-repeat: round stretch;
+  background-color: transparent;
+  width: 168px;
+  height: 168px;
+  padding: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.hyperlink-button:hover {
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Button_Hover.png");
+}
+
+.hyperlink-button:active {
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Button_Pressed.png");
+  transform: translateY(0px);
+}
+
+.hyperlink-button img {
+  display: block;
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.hyperlink-button:active img{
+  transform: translateY(8px);
+}
+
+/* CUSTOM FONT */
+.image-font {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2px;
+  line-height: 1;
+}
+
+.image-font-letter {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  image-rendering: auto;
+}
+
+.image-font-space {
+  width: 12px;
+  height: 1px;
+}
+
+.image-font-fallback {
+  font-size: 0.9em;
+  line-height: 1;
+}
+
+.clickable-button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 24px solid transparent;
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Button_Idle.png");
+  border-image-slice: 32 fill;
+  border-image-width: 24px;
+  border-image-outset: 0;
+  border-image-repeat: repeat;
+  background-color: transparent;
+  min-width: 260px;
+  min-height: 72px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.clickable-button .image-font-letter,
+.clickable-button .image-font-fallback,
+.clickable-button .image-font-space {
+  display: block;
+  transform: translateY(-10px);
+  /*transition: transform 90ms ease-out;*/
+}
+
+.clickable-button:hover {
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Button_Hover.png");
+}
+
+.clickable-button:active {
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Button_Pressed.png");
+  transform: translateY(0px);
+}
+
+.clickable-button:active .image-font-letter,
+.clickable-button:active .image-font-fallback,
+.clickable-button:active .image-font-space {
+  transform: translateY(0);
+}
+
+/* GALLERY PAGE */
+.gallery-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 12px;
+  width: max-content;
+}
+
+.gallery-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 4px 0 10px;
+}
+
+.gallery-item {
+  border: 18px solid transparent;
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Image_Frame_1.png");
+  border-image-slice: 64 64 64 64;
+  border-image-width: 24px;
+  border-image-outset: 0;
+  border-image-repeat: repeat;
+  padding: 8px;
+  background: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 240px;
+  cursor: pointer;
+  transition: transform 120ms ease, filter 120ms ease;
+  touch-action: manipulation;
+}
+
+.gallery-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.gallery-caption {
+  margin-top: 6px;
+  font-size: 0.9rem;
+  color: #333;
+  text-align: center;
+}
+
+.gallery-item:hover {
+  background: #f2f2f2;
+  transform: translateY(-2px);
+  filter: brightness(1.02);
+}
+
+.gallery-item:focus-visible {
+  outline: 3px solid #ffb300;
+  outline-offset: 2px;
+}
+
+.gallery-lightbox {
+  position: fixed;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+}
+
+.gallery-lightbox.is-open {
+  display: flex;
+}
+
+.gallery-lightbox-panel {
+  max-width: min(92vw, 1200px);
+  max-height: 90vh;
+  background: #fff;
+  padding: 16px;
+  border: 18px solid transparent;
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Image_Frame_1.png");
+  border-image-slice: 64 64 64 64;
+  border-image-width: 24px;
+  border-image-repeat: repeat;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.gallery-lightbox-image {
+  display: block;
+  max-width: 100%;
+  max-height: min(75vh, 960px);
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.gallery-lightbox-caption {
+  margin: 0;
+  font-size: 1rem;
+  color: #222;
+  text-align: center;
+}
+
+.site-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 8px 12px;
+  background: rgba(255, 240, 120, 0.95);
+  border-top: 2px solid #cfaa00;
+  z-index: 900;
+}
+
+.site-footer-timestamp {
+  margin: 0;
+  font-size: 12px;
+  color: #2b2000;
+}
+
+.site-footer-license {
+  margin: 0;
+  font-size: 12px;
+  color: #2b2000;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+}
+
+/* CUSTOM CURSORS */
+body {
+  cursor: url("Images/Site Assets/Cursor Sprites/Cursor_Redraw.png"), auto;
+}
+
+a,
+.clickable-button,
+.hyperlink-button,
+.gallery-item {
+  cursor: url("Images/Site Assets/Cursors/Cursor_OverTouchable_Redraw.png"), pointer;
+}
+
+button {
+  cursor: url("Images/Site Assets/Cursors/Cursor_OverTouchable_Redraw.png"), pointer;
+}
+
+/* GUESTBOOK */
+.guestbook-page-background {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url("Images/Site Assets/Backgrounds/Website_Wallpaper_v3.png");
+  background-repeat: repeat;
+  background-size: 220px auto;
+  background-position: bottom right;
+  animation: downright-diagonal-wallpaper-scroll 18s linear infinite;
+}
+
+  /*Controls the header size.*/
+.guestbook-page-background h1 {
+  --header-font-scale: 2.6;
+}
+
+.guestbook-container {
+  border: 24px solid transparent;
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Bulletin_Board_Container.png");
+  border-image-slice: 48 fill;
+  border-image-width: 24px;
+  border-image-outset: 0;
+  border-image-repeat: repeat;
+  display: block;
+  width: fit-content;
+  max-width: min(92vw, 980px);
+  margin: 0 auto 12px;
+  padding: 6px 14px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.guestbook-form {
+  border: 24px solid transparent;
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Parchment_Container.png");
+  border-image-slice: 48 fill;
+  border-image-width: 24px;
+  border-image-outset: 0;
+  border-image-repeat: repeat;
+  display: block;
+  width: 100%;
+  max-width: min(92vw, 980px);
+  margin: 0 auto 12px;
+  padding: 6px 14px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-group small {
+  display: block;
+  color: #666;
+  font-size: 12px;
+  margin-top: 3px;
+}
+
+.formatting-toolbar {
+  background: #f5f5f5;
+  padding: 8px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.formatting-toolbar button {
+  padding: 6px 12px;
+  background: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.formatting-toolbar button:hover {
+  background: #555;
+}
+
+.formatting-toolbar button.italic {
+  font-style: italic;
+}
+
+.formatting-toolbar button.underline {
+  text-decoration: underline;
+}
+
+#send-btn {
+  background: #333;
+  color: white;
+  padding: 10px 30px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+#send-btn:hover {
+  background: #555;
+}
+
+.guestbook-messages {
+  border: 24px solid transparent;
+  border-image-source: url("Images/Site Assets/Containers and Buttons/Parchment_Container.png");
+  border-image-slice: 48 fill;
+  border-image-width: 24px;
+  border-image-outset: 0;
+  border-image-repeat: repeat;
+  display: block;
+  width: fit-content;
+  max-width: min(92vw, 980px);
+  margin: 0 auto 12px;
+  padding: 6px 14px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.guestbook-messages h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+#messages-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 8px;
+  justify-items: center;
+  margin-top: 8px;
+}
+
+.message-item {
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  max-width: 320px;
+  margin: 0;
+  padding: 6px 14px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.message-item::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 24px solid transparent;
+  border-image-source: url("../Images/Site Assets/Containers and Buttons/StickyNote_Container.png");
+  border-image-slice: 56 fill;
+  border-image-width: 24px;
+  border-image-outset: 0;
+  border-image-repeat: repeat;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.message-item:last-child {
+  margin-bottom: 0;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.message-author {
+  font-weight: bold;
+  color: #333;
+}
+
+.message-timestamp {
+  font-size: 12px;
+  color: #999;
+}
+
+.message-body {
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+}
+
+.message-delete-btn {
+  font-size: 11px;
+  color: #999;
+  cursor: pointer;
+  text-decoration: underline;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.message-delete-btn:hover {
+  color: #666;
+}
+
+.no-messages {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+  padding: 20px 0;
+  grid-column: 1 / -1;
+}
+
+.page-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 15px;
+}
+
+/* Color Picker Styling */
+.color-picker {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+  justify-content: center;
+}
+
+.color-picker label {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  cursor: pointer;
+  user-select: none;
+  font-weight: normal;
+}
+
+.color-picker input[type="radio"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+/* Message Color Variations */
+.message-color-white::before {
+  filter: none;
+}
+
+.message-color-red::before {
+  filter: sepia(1) saturate(5) hue-rotate(300deg) brightness(1.03);
+}
+
+.message-color-orange::before {
+  filter: sepia(1) saturate(5) hue-rotate(330deg) brightness(1.05);
+}
+
+.message-color-yellow::before {
+  filter: sepia(1) saturate(5) hue-rotate(0deg) brightness(1.05);
+}
+
+.message-color-green::before {
+  filter: sepia(1) saturate(5) hue-rotate(60deg) brightness(1.03);
+}
+
+.message-color-cyan::before {
+  filter: sepia(1) saturate(5) hue-rotate(120deg) brightness(1.03);
+}
+
+.message-color-blue::before {
+  filter: sepia(1) saturate(5) hue-rotate(180deg) brightness(1.02);
+}
+
+.message-color-violet::before {
+  filter: sepia(1) saturate(5) hue-rotate(240deg) brightness(1.03);
+}
+
+/* Guestbook iframe styling */
+#guestbook {
+  width: 100%;
+  height: 800px;
+  border: none;
+  display: block;
+  margin: 0;
+  box-sizing: border-box;
+}
