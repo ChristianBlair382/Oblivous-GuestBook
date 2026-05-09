@@ -68,7 +68,7 @@ h6::before {
   position: absolute;
   inset: 0;
   border: 24px solid transparent;
-  border-image-source: url("Images/Site Assets/Containers and Buttons/Header_Container.png");
+  border-image-source: url("Header_Container.png");
   border-image-slice: 48 fill;
   border-image-width: 32px;
   border-image-outset: 0;
@@ -192,7 +192,7 @@ h6 .image-font-fallback {
 
 .text-item {
   border: 24px solid transparent;
-  border-image-source: url("Images/Site Assets/Containers and Buttons/Text_Container.png");
+  border-image-source: url("Text_Container.png");
   border-image-slice: 32 fill;
   border-image-width: 24px;
   border-image-outset: 0;
