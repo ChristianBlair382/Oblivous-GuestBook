@@ -40,8 +40,8 @@
   function getDefaultLetterBasePath() {
     var path = window.location.pathname.toLowerCase();
     return path.indexOf("/pages/") !== -1
-      ? "../Images/Site Assets/Letters/"
-      : "Images/Site Assets/Letters/";
+      ? "../Letters/"
+      : "Letters/";
   }
 
   function getDefaultPunctuationBasePath() {
